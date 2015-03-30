@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @advert.title
+p
+  strong Description:
+  = @advert.description
+p
+  strong Image url:
+  = @advert.image_url
+
+= link_to 'Edit', edit_advert_path(@advert)
+'|
+= link_to 'Back', adverts_path
