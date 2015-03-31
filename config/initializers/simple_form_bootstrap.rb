@@ -12,8 +12,10 @@ SimpleForm.setup do |config|
     b.optional :min_max
     b.optional :readonly
     b.use :label, class: 'control-label'
-
-    b.use :input, class: 'form-control'
+    b.wrapper tag: 'div', class: 'input-group' do |ba|
+      ba.use :input, class: 'form-control'
+      ba.use :span
+    end
     b.use :error, wrap_with: { tag: 'span', class: 'help-block' }
     b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
   end

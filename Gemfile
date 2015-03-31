@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'cancancan'
+
 gem 'sprockets-rails'
 
 gem 'slim-rails'
