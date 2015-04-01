@@ -15,11 +15,14 @@ div class="row"
     div class="well"
       div class="text-right"
         a class="btn btn-success" Leave a Review
+      =render "comments/form"
       hr
-      div class="row"
-        div class="col-md-12"
-          span Author
-          Anonymous
-          span class="pull-right" 10 days ago
-          p This product was great in terms of quality. I would definitely buy another!
-        hr
+      -@comments.each do |comment|
+        div class="row"
+          div class="col-md-12"
+            span
+              =link_to comment.user.login, comment.user
+            span class="pull-right" 10 days ago
+            p
+              =comment.body
+          hr

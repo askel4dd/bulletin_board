@@ -12,6 +12,8 @@ class AdvertsController < ApplicationController
   # GET /adverts/1
   # GET /adverts/1.json
   def show
+    @comments = @advert.comments.all
+    @comment = Comment.new
   end
 
   # GET /adverts/new

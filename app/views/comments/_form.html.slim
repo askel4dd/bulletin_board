@@ -1,10 +1,8 @@
-= simple_form_for(@comment) do |f|
+= simple_form_for [@advert, @comment] do |f|
   = f.error_notification
 
   .form-inputs
-    = f.input :user_id
     = f.input :body
-    = f.input :advert_id
 
   .form-actions
     = f.button :submit
