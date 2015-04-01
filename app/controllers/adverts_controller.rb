@@ -1,5 +1,7 @@
 class AdvertsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /adverts
   # GET /adverts.json
@@ -25,6 +27,7 @@ class AdvertsController < ApplicationController
   # POST /adverts.json
   def create
     @advert = Advert.new(advert_params)
+    @advert.user_id = current_user.id
 
     respond_to do |format|
       if @advert.save
