@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
             :address, :city, :zip, :state, presence: true
   belongs_to :role
   has_many :adverts
+  has_many :comments
   before_save :set_role
   
   def set_role
