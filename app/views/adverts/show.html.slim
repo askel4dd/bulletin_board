@@ -22,7 +22,8 @@ div class="row"
           div class="col-md-12"
             span
               =link_to comment.user.login, comment.user
-            span class="pull-right" 10 days ago
+            span class="pull-right"
+              =time_ago_in_words(comment.updated_at)
             p
               =comment.body
-          hr
+        hr
