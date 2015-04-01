@@ -8,10 +8,11 @@ class Ability
     elsif user.role? :moderator
       can :manage, Advert
     elsif user.role? :generic
+      can :read, [User, Advert]
       can :manage, Advert do |advert|
         advert.try(:user) == user
       end
-    else
+    elsif user
       can :create, User
       can :read, [User, Advert]
     end
