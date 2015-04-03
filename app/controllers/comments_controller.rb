@@ -20,11 +20,9 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
+        format.html { redirect_to @comment.advert, notice: 'Comment was successfully updated.' }
       else
-        format.html { render :edit }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.html { redirect_to @comment.advert, alert: 'Nope' }
       end
     end
   end
@@ -34,7 +32,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to advert_path, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to advert, notice: 'Comment was successfully destroyed.' }
     end
   end
 
