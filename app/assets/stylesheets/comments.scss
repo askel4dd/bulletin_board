@@ -4,9 +4,13 @@
 #comment_body {
       resize: vertical;
 }
-.com-sec a, form, span {
+.com-sec a {
       display: inline;
 }
 .com-sec form {
       margin-left: 10px;
+      display: inline;
+}
+.com-sec span {
+      display:inline;
 }
