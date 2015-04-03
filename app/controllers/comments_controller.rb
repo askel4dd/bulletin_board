@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:update, :destroy]
+  load_and_authorize_resource
   # POST /comments
   # POST /comments.json
   def create
@@ -33,7 +34,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to advert_path, notice: 'Comment was successfully destroyed.' }
     end
   end
 

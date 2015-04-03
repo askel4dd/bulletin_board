@@ -10,7 +10,8 @@ div class="row"
         p
           =@advert.description
       div class="ratings"
-        p class="pull-right" Comment count
+        p class="pull-right"
+          =pluralize @advert.comments.count, 'comment'
         p tags
     div class="well"
       div class="text-right"
@@ -20,10 +21,12 @@ div class="row"
       -@comments.each do |comment|
         div class="row"
           div class="col-md-12"
-            span
+            div class="com-sec"
               =link_to comment.user.login, comment.user
-            span class="pull-right"
-              =time_ago_in_words(comment.updated_at)
+              =button_to "Edit", advert_comment_path(@advert, comment), method: :put, class: "btn btn-warning btn-xs"
+              =button_to "Delete", advert_comment_path(@advert, comment), method: :delete, class: "btn btn-danger btn-xs"
+              span class="pull-right"
+                =time_ago_in_words(comment.updated_at)
             p
               =comment.body
         hr
