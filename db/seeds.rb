@@ -1,7 +1,57 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Comment.delete_all
+Advert.delete_all
+User.delete_all
+Role.delete_all
+roles = Role.create!([{name: "Admin"},
+                     {name: "Moderator"},
+                     {name: "Generic"}])
+users = User.create!([{email: "Timon@example.com",
+                      password: "Password",
+                      password_confirmation: "Password",
+                      login: "dimon",
+                      fname: "Dmitriy",
+                      lname: "Savin",
+                      birthday: "1992-09-07",
+                      address: "st. Univ 26",
+                      city: "Lviv",
+                      zip: 80054,
+                      state: "Ukraine",
+                      role: roles[0]},
+                     {email: "Pumba@example.com",
+                      password: "Password",
+                      password_confirmation: "Password",
+                      login: "Pumba",
+                      fname: "Semen",
+                      lname: "Sosnickiy",
+                      birthday: "2007-07-07",
+                      address: "Tihiy dom 1",
+                      city: "Kyiv",
+                      zip: 9000,
+                      state: "Ukraine",
+                      role: roles[1]},
+                     {email: "arthas@example.com",
+                      password: "Password",
+                      password_confirmation: "Password",
+                      login: "Valera",
+                      fname: "Valeriy",
+                      lname: "Yerohin",
+                      birthday: "1990-02-10",
+                      address: "Apple st. 1",
+                      city: "Kharkiv",
+                      zip: 8888,
+                      state: "Ukraine",
+                      role: roles[2]}])
+adverts = Advert.create!([{title: "Missing dog",
+                          description: "Please healp as find our dog",
+                          image_url: "asd",
+                          user: users[0]},
+                          {title: "Hello hello hello",
+                          description: "Is any body out there ?",
+                          image_url: "asd",
+                          user: users[1]},
+                          {title: "Paranoid Android",
+                          description: "Lorem ipsum — dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.\nNunc viverra imperdiet enim. Fusce est. Vivamus a tellus.\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+                          image_url: "asd",
+                          user: users[2]}])
