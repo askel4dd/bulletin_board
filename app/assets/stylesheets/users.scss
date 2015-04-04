@@ -1,9 +1,22 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .login_box{
-      width: 30%;
+      width: 20%;
       position: absolute;
       top: 15%;
-      left: 33.5%;
+      left: 38%;
+}
+.form-links{
+      text-align: center;
+      margin-top: 1em;
+}
+.table-user-information > tbody > tr {
+      border-top: 1px solid rgb(221, 221, 221);
+}
+.table-user-information > tbody > tr:first-child {
+      border-top: 0;
+}
+.table-user-information > tbody > tr > td {
+      border-top:0;
+}
+.panel {
+      width: 60%;
 }

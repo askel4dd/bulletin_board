@@ -13,6 +13,8 @@ nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
           =link_to 'Users', users_path
       ul class="nav navbar-nav navbar-right"
         - if user_signed_in?
+          li
+            = link_to 'New Advert', new_advert_path
           li class="dropdown"
             a class="dropdown-toggle" aria-expanded="true" role="button" data-toggle="dropdown"
               =current_user.email
