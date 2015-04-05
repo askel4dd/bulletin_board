@@ -1,7 +1,7 @@
 div class="row"
   div class="col-md-9"
     div class="thumbnail"
-      img class="img-responsive"
+      =image_tag @advert.image_url, class: "image-responce"
       div class="caption-full"
         h4 class="pull-right"
           =link_to @advert.user.login, @advert.user

@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'fog'
+gem 'carrierwave'
 gem 'omniauth-google-oauth2'
 gem 'cancancan'
 gem 'sprockets-rails'
