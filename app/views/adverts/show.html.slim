@@ -19,17 +19,4 @@ div class="row"
       =render "comments/form"
       hr
       -@comments.each do |comment|
-        div class="row"
-          div class="col-md-12"
-            div class="com-sec"
-              span class="glyphicon glyphicon-user"
-              =link_to comment.user.login, comment.user
-              -if can? :update, comment
-                =button_to "Edit", advert_comment_path(@advert, comment), method: :put, class: "btn btn-warning btn-xs"
-                =button_to "Delete", advert_comment_path(@advert, comment), method: :delete, class: "btn btn-danger btn-xs"
-              span class="pull-right"
-                span class="glyphicon glyphicon-time"
-                =time_ago_in_words(comment.updated_at)
-            p
-              =comment.body
-        hr
+        =render comment
