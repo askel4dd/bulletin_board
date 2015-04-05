@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.js { render nothing: true}
+      format.js { render :json => @comment.id, :status => 200}
       format.html { redirect_to root_path }
     end
   end
