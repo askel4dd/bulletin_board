@@ -1,16 +1,11 @@
 source 'https://rubygems.org'
+gem 'omniauth-google-oauth2'
 gem 'cancancan'
-
 gem 'sprockets-rails'
-
 gem 'slim-rails'
-
 gem 'simple_form'
-
 gem 'devise'
-
 gem 'quiet_assets'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
