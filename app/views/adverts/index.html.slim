@@ -7,8 +7,14 @@
         a href="#"
           img class="img-responsive" src="http://placehold.it/700x300"
       div class="col-md-5"
-        h3 =advert.title
-        h4 Subheading
+        div class="com-sec"
+          h3 =advert.title
+          -if can? :update, advert
+            =link_to "Edit", edit_advert_path(advert), class: "btn btn-warning btn-xs"
+            =link_to "Delete", advert, method: :delete, class: "btn btn-danger btn-xs"
+        div class="com-sec"
+          span class="glyphicon glyphicon-user"
+          h5 =link_to advert.user.login
         p =truncate(advert.description, length: 160, separator: " ")
         =link_to advert, :class => "btn btn-primary" do
           ="Show Advert"
