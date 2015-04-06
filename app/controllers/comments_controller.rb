@@ -7,11 +7,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     @comment.advert = Advert.find(params[:advert_id])
-
-    respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment.advert, notice: 'Comment was successfully created.' }
-      end
+        render  :partial => "comments/comment",
+                :locals => { :@advert => @comment.advert, :comment  => @comment}, :layout => false,
+                :status => :created
     end
   end
 
