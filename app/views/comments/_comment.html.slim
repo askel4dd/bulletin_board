@@ -5,11 +5,11 @@ div.comment *{ :id => "comment-#{comment.id}"}
         span class="glyphicon glyphicon-user"
         =link_to comment.user.login, comment.user
         -if can? :update, comment
-          =button_to "Edit", advert_comment_path(@advert, comment), method: :put, class: "btn btn-warning btn-xs"
+          button class="btn btn-warning btn-xs" *{ id: "edit-comment-#{comment.id}"} Edit
           =button_to "Delete", advert_comment_path(@advert, comment), method: :delete, remote: true, class: "btn btn-danger btn-xs"
         span class="pull-right"
           span class="glyphicon glyphicon-time"
           =time_ago_in_words(comment.updated_at)
       p
-        =comment.body
+        =best_in_place_if ( can? :update, comment), [@advert, comment], :body, as: :textarea, activator: "#edit-comment-#{comment.id}", ok_button: 'Save', cancel_button: 'Cancel'
   hr

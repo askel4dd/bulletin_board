@@ -20,8 +20,10 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to @comment.advert, notice: 'Comment was successfully updated.' }
+        format.json { respond_with_bip(@comment) }
       else
         format.html { redirect_to @comment.advert, alert: 'Nope' }
+        format.json { respond_with_bip(@comment) }
       end
     end
   end

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'best_in_place'
 gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'

@@ -1,20 +1,35 @@
 div class="row"
-  div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad"
-    div class="panel panel-info"
-      div class="panel-heading"
-        h3 class="panel-title" Savin Dmitriy
-      div class="panel-body"
-        div class="col-md-9 col-lg-9"
-          table class="table table-user-information"
-            tbody
-              tr
-                td Department:
-                td Programming
-              tr
-                td Hire Date:
-                td 06/09/2012
+  table class="table"
+    tbody
+      tr
+        td Login
+        td =best_in_place_if (can? :update, @user), @user, :login, as: :input
+      tr
+        td Email
+        td =best_in_place_if (can? :update, @user), @user, :email, as: :input
+      tr
+        td First name
+        td =best_in_place_if (can? :update, @user), @user, :fname, as: :input
+      tr
+        td Last name
+        td =best_in_place_if (can? :update, @user), @user, :lname, as: :input
+      tr
+        td Birthday
+        td =best_in_place_if (can? :update, @user), @user, :birthday, as: :input
+      tr
+        td Address
+        td =best_in_place_if (can? :update, @user), @user, :address, as: :input
+      tr
+        td City
+        td =best_in_place_if (can? :update, @user), @user, :city, as: :input
+      tr
+        td Zip
+        td =best_in_place_if (can? :update, @user), @user, :zip, as: :input
+      tr
+        td State
+        td =best_in_place_if (can? :update, @user), @user, :state, as: :input
+      tr
+        td Role
+        td =@user.role.name
 
-
-= link_to 'Edit', edit_user_path(@user)
-'|
-= link_to 'Back', users_path
+/= link_to 'Delete', edit_user_registration_path, method: :delete, class: "btn btn-danger"
