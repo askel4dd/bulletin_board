@@ -8,7 +8,7 @@ div class="row"
         h4
           =@advert.title
         p
-          =@advert.description
+          =markdown @advert.description
       div class="ratings"
         p class="pull-right" id="comment-count"
           =pluralize @advert.comments.count, 'comment'

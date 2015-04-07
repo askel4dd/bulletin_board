@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'redcarpet'
 gem 'best_in_place'
 gem 'fog'
 gem 'carrierwave'

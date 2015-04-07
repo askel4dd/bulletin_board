@@ -14,7 +14,7 @@
         div class="com-sec"
           span class="glyphicon glyphicon-user"
           h5 =link_to advert.user.login, advert.user
-        p =truncate(advert.description, length: 160, separator: " ")
+        p =markdown truncate(advert.description, length: 160, separator: " ")
         =link_to advert, :class => "btn btn-primary" do
           ="Show Advert"
           span class="glyphicon glyphicon-chevron-right"
