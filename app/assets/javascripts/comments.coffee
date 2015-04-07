@@ -1,5 +1,5 @@
 $(document).on 'ready page:load', ->
-  $('.btn-success').click ->
+  $('#new-comment').click ->
     $('#new_comment').toggle('slow')
   $('#new_comment')
     .on "ajax:beforeSend", ->
@@ -12,6 +12,7 @@ $(document).on 'ready page:load', ->
         .removeAttr('disabled', 'disabled')
         .val('');
       $(xhr.responseText).hide().insertAfter($(".well > div").last()).show('slow')
+      $(document).trigger('page:load')
   $(document)
     .on "ajax:beforeSend", ".comment", ->
       $(@).fadeTo('fast', 0.5)

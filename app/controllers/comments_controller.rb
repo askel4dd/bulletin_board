@@ -1,8 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:update, :destroy]
   load_and_authorize_resource
-  # POST /comments
-  # POST /comments.json
+
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user
@@ -11,11 +10,9 @@ class CommentsController < ApplicationController
         render  :partial => "comments/comment",
                 :locals => { :@advert => @comment.advert, :comment  => @comment}, :layout => false,
                 :status => :created
-    end
+      end
   end
 
-  # PATCH/PUT /comments/1
-  # PATCH/PUT /comments/1.json
   def update
     respond_to do |format|
       if @comment.update(comment_params)
@@ -28,8 +25,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  # DELETE /comments/1
-  # DELETE /comments/1.json
   def destroy
     @comment.destroy
     respond_to do |format|
