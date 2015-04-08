@@ -8,6 +8,11 @@ class AdvertsController < ApplicationController
   def index
     if params[:tag]
       @adverts = Advert.tagged_with(params[:tag])
+    elsif params[:query]
+      @query = Advert.search do
+        fulltext params[:query]
+      end
+      @adverts = @query.results
     else
       @adverts = Advert.all
     end

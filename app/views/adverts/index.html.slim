@@ -1,6 +1,12 @@
   div class="row"
     div class="col-lg-12"
       h1 class="page-header" Adverts
+      = form_tag adverts_path, class: "form-inline", method: :get do
+        .form-group
+          = text_field_tag :query, params[:query], class: "form-control"
+          = submit_tag "Search", class: "btn btn-primary"
+          - if params[:query].present?
+            = link_to "clear", adverts_path
   - @adverts.each do |advert|
     div class="row"
       div class="col-md-7"
