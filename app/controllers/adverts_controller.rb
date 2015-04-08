@@ -6,7 +6,11 @@ class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
   def index
-    @adverts = Advert.all
+    if params[:tag]
+      @adverts = Advert.tagged_with(params[:tag])
+    else
+      @adverts = Advert.all
+    end
   end
 
   # GET /adverts/1
@@ -74,6 +78,6 @@ class AdvertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advert_params
-      params.require(:advert).permit(:title, :description, :image)
+      params.require(:advert).permit(:title, :description, :image, :tag_list)
     end
 end

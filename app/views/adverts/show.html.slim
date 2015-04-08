@@ -12,7 +12,8 @@ div class="row"
       div class="ratings"
         p class="pull-right" id="comment-count"
           =pluralize @advert.comments.count, 'comment'
-        p tags
+        p Tags:
+        p =tags_to_link(@advert.tag_list)
     div class="well"
       div class="text-right"
         a class="btn btn-success" id="new-comment" Add comment

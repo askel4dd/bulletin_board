@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "registrations", :omniauth_callbacks => "omniauth_callbacks"}
   resources :users
-
+  get 'tags/:tag', to: 'adverts#index', as: :tag
   resources :adverts do
     resources :comments
   end
