@@ -1,5 +1,6 @@
-$(document).on 'ready page:load', ->
-  $('#new-comment').click ->
+$(document).ready ->
+  $('#add-comment').click ->
+    $(@).toggleClass('active')
     $('#new_comment').toggle('slow')
   $('#new_comment')
     .on "ajax:beforeSend", ->
@@ -11,8 +12,7 @@ $(document).on 'ready page:load', ->
         .removeClass('uneditable-input')
         .removeAttr('disabled', 'disabled')
         .val('');
-      $(xhr.responseText).hide().insertAfter($(".well > div").last()).show('slow')
-      $(document).trigger('page:load')
+      $(xhr.responseText).hide().insertAfter($(".well").children().last()).show('slow')
   $(document)
     .on "ajax:beforeSend", ".comment", ->
       $(@).fadeTo('fast', 0.5)

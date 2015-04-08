@@ -11,5 +11,5 @@ div.comment *{ :id => "comment-#{comment.id}"}
           span class="glyphicon glyphicon-time"
           =time_ago_in_words(comment.updated_at)
       p
-        =best_in_place_if ( can? :update, comment), [@advert, comment], :body, as: :textarea, activator: "#edit-comment-#{comment.id}", ok_button: 'Save', cancel_button: 'Cancel'
+        =best_in_place_if ( can? :update, comment), [@advert, comment], :body, as: :textarea, activator: "#edit-comment-#{comment.id}", ok_button: 'Save', cancel_button: 'Cancel', inner_class: 'form-control', ok_button_class: 'btn btn-default', cancel_button_class: 'btn btn-default'
   hr

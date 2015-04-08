@@ -1,9 +1,10 @@
 div class="row"
-  div class="col-md-9"
+  div class="col-md-9" style="float: none; margin: auto"
     div class="thumbnail"
       =image_tag @advert.image_url, class: "image-responce" if @advert.image?
       div class="caption-full"
         h4 class="pull-right"
+          span class="glyphicon glyphicon-user"
           =link_to @advert.user.login, @advert.user
         h4
           =@advert.title
@@ -16,7 +17,7 @@ div class="row"
         p =tags_to_link(@advert.tag_list)
     div class="well"
       div class="text-right"
-        a class="btn btn-success" id="new-comment" Add comment
+        a class="btn btn-success" id="add-comment" Add comment
       =render "comments/form"
       hr
       -@comments.each do |comment|
