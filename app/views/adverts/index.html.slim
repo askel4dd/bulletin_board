@@ -3,7 +3,7 @@
       h1 class="page-header" Adverts
   - @adverts.each do |advert|
     div class="row"
-      div class="col-md-7"
+      div class="col-md-7" style="width: 20%"
         =image_tag advert.image.thumb.url, class: "img-responsive" if advert.image?
       div class="col-md-5"
         div class="com-sec"

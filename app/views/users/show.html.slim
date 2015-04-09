@@ -31,5 +31,6 @@ div class="row"
       tr
         td Role
         td =@user.role.name
-
+  div id="map-container"
+    div class="map-canvas" id="map"
 /= link_to 'Delete', edit_user_registration_path, method: :delete, class: "btn btn-danger"

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 gem 'gmaps4rails'
+gem 'geocoder'
 gem 'sunspot_rails'
 gem 'acts-as-taggable-on'
 gem 'redcarpet'
