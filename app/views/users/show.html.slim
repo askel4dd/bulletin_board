@@ -30,6 +30,9 @@ div class="row"
       tr
         td State
         td =best_in_place_if (can? :update, @user), @user, :state, as: :input
+      tr 
+        td Country
+        td =best_in_place_if (can? :update, @user), @user, :country, as: :input
       tr
         td Role
         td =@user.role.name

@@ -11,11 +11,6 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @hash = Gmaps4rails.build_markers(@user) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
-    end
-    
   end
 
   # GET /users/new
@@ -75,6 +70,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:login, :email, :fname, :lname, :birthday, :address, :city, :zip, :state)
+      params.require(:user).permit(:login, :email, :fname, :lname, :birthday, :address, :city, :zip, :state, :country)
     end
 end

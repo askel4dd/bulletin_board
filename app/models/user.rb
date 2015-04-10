@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:google_oauth2]
   validates :email, :encrypted_password, :login, :fname, :lname, :birthday,
-            :address, :city, :zip, :state, presence: true
+            :address, :city, :zip, :state, :country, presence: true
   belongs_to :role
   has_many :adverts
   has_many :comments
@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   after_validation :geocode#, if ->(obj){ obj.full_address.present? || obj.full_address.changed? }
 
   def full_address
-    [zip, address, city, state].compact.join(', ')
+    [zip, address, city, state, country].compact.join(', ')
   end
 
   def set_role
