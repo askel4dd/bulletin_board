@@ -4,18 +4,14 @@ postgresql: &postgresql
   password:
   database: bulletin_board_<%= Rails.env %>
   min_messages: ERROR
-
 defaults: &defaults
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *"postgresql"
-
+  <<: *postgresql
 development:
   <<: *defaults
-
 test:
   <<: *defaults
-
 production:
   <<: *defaults
