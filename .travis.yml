@@ -1,3 +1,6 @@
 language: ruby
 rvm:
   - 2.2.0
+before_script:
+  - psql -c "CREATE USER dimon WITH PASSWORD '1q2w3e4r';" -U postgres
+  - psql -c 'create database bulletin_board_test;' -U postgres
