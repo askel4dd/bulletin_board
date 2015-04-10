@@ -15,7 +15,7 @@ $(document).ready ->
           map.addMarker({
             lat: latlng.lat(),
             lng: latlng.lng()
-          });
+          })
     })
   $('#user_address').change ->
     proceedGeo()
