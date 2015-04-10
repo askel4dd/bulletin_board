@@ -15,4 +15,5 @@
 //= require jquery.purr
 //= require best_in_place
 //= require bootstrap-sprockets
+//= require gmaps
 //= require_tree .

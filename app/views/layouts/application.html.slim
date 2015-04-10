@@ -3,14 +3,15 @@ html
   head
     meta name="viewport" content="width=device-width, initial-scale=1"
     title BulletinBoard
-    == stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    == javascript_include_tag 'application', 'data-turbolinks-track' => true
-    == csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = yield :head
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
   body
     header
-      ==render "layouts/navigation"
+      = render "layouts/navigation"
     main
-      ==render "layouts/messages"
+      = render "layouts/messages"
       div class="container"
         == yield
 
