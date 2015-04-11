@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'coveralls', require: false
 gem 'country_select'
 gem 'geocoder'
 gem 'sunspot_rails'

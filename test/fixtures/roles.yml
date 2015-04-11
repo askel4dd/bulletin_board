@@ -1,7 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-
-two:
-  name: MyString
+admin:
+  id: 1,
+  name: "Admin"
+moderator:
+  id: 2,
+  name: "Moderator"
+generic:
+  id: 3,
+  name: "Generic"

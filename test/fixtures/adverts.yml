@@ -1,11 +1,6 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  title: MyString
-  description: MyText
-  image_url: MyString
-
-two:
-  title: MyString
-  description: MyText
-  image_url: MyString
+dimon_advert:
+  id: 1
+  title: "Hello world"
+  description: "Advert for test."
+  image: "hello-world.jpg"
+  user_id: 1

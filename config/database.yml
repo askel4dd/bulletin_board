@@ -21,7 +21,7 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   username: dimon
-  password: 1q2w3e4r
+  password: <%= ENV['POSTGRE_PASSWORD'] %>
 
 development:
   <<: *default

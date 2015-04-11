@@ -1,11 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  user_id: 1
-  body: MyText
-  advert_id: 1
-
-two:
-  user_id: 1
-  body: MyText
-  advert_id: 1
+dimon_comment:
+  id: 1
+  user_id: dimon
+  body: "Hello world."
+  advert_id: dimon_advert
