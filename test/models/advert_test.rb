@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class AdvertTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "new user role set to Generic" do
+  end
 end

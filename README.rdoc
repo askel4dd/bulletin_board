@@ -1,1 +1,0 @@
-{<img src="https://travis-ci.org/askel4dd/bulletin_board.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/askel4dd/bulletin_board]

@@ -4,3 +4,9 @@ dimon_advert:
   description: "Advert for test."
   image: "hello-world.jpg"
   user_id: 1
+frank_advert:
+  id: 2
+  title: "Hello world"
+  description: "Advert for test."
+  image: "hello-world.jpg"
+  user_id: 2

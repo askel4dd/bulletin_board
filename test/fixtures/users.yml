@@ -11,3 +11,16 @@ dimon:
   zip: 8888
   state: "Киевская область"
   country: "UA"
+frank:
+  id: 2
+  email: "frank@example.com"
+  encrypted_password: "$2a$10$vjXvrcTvFG69uvd5cqpZBe88JSTTMqVF9IW/f7svpfn..."
+  login: "frank"
+  fname: "Frank"
+  lname: "Brown"
+  birthday: "1990-01-01"
+  address: "qweqwe"
+  city: "Kiev"
+  zip: "1231"
+  state: "qweqwe"
+  country: "UA"

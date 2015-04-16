@@ -1,5 +1,10 @@
 dimon_comment:
   id: 1
-  user_id: dimon
+  user_id: 1
   body: "Hello world."
-  advert_id: dimon_advert
+  advert_id: 1
+frank_comment:
+  id: 2
+  user_id: 2
+  body: "Hello world."
+  advert_id: 1
