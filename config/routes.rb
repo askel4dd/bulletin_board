@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { :registrations => "registrations", :omniauth_callbacks => "omniauth_callbacks"}
+  devise_for :users, controllers: { registrations: "registrations", omniauth_callbacks: "omniauth_callbacks" }
   resources :users
   get 'tags/:tag', to: 'adverts#index', as: :tag
   resources :adverts do
-    resources :comments
+    resources :comments, only: [:create, :update, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

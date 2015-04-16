@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :comments
   before_save :set_role
   geocoded_by :full_address
-  after_validation :geocode, if: ->(obj){ obj.full_address.present? || obj.full_address.changed? }
+  after_validation :geocode#, if: ->(obj){ obj.full_address.changed? }
 
   def full_address
     [zip, address, city, state, country].compact.join(', ')
