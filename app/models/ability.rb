@@ -7,6 +7,7 @@ class Ability
       can :manage, :all
     elsif user.role? :moderator
       can :manage, [Advert, Comment]
+      can :manage, user
     elsif user.role? :generic
       can :manage, user
       can :read, [User, Advert, Comment]
