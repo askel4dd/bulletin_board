@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:update, :destroy]
+  before_filter :authenticate_user!
   load_and_authorize_resource
 
   def create
@@ -28,7 +29,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.js { render :nothing => true }
+      format.js { render nothing: true }
       format.html { redirect_to @comment.advert, notice: "Comment added" }
     end
   end

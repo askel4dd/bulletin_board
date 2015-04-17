@@ -16,9 +16,12 @@ div class="row"
         p Tags:
         p =tags_to_link(@advert.tag_list)
     div class="well"
-      div class="text-right"
-        a class="btn btn-success" id="add-comment" Add comment
-      =render "comments/form"
+      -if can? :create, Comment
+        div class="text-right"
+          a class="btn btn-success" id="add-comment" Add comment
+        =render "comments/form"
+      -else
+        p Register or log in to add new comments.
       hr
       -@comments.each do |comment|
         =render comment

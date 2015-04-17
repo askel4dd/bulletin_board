@@ -7,6 +7,10 @@ $(document).ready ->
       $(@).find('textarea')
         .addClass('uneditable-input')
         .attr('disabled', 'disabled');
+    .on "ajax:error", ->
+      $(@).find('textarea')
+        .removeClass('uneditable-input')
+        .removeAttr('disabled', 'disabled')
     .on "ajax:success", (evt, data, status, xhr)->
       $(@).find('textarea')
         .removeClass('uneditable-input')
