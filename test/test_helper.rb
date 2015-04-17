@@ -8,7 +8,6 @@ require 'capybara/poltergeist'
 require 'capybara-screenshot/minitest'
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
   Warden.test_mode!
   Capybara.default_driver = :poltergeist
