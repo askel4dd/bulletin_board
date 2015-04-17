@@ -41,15 +41,15 @@ class AdvertsTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Edited text")
   end
 
- # test "comment ajax delete button work" do
- #   login_as(users(:dimon), scope: :user)
- #   visit advert_path(@dimon_advert)
- #   within "#comment-#{@comment_to_delete.id}" do
- #     before_click = @dimon_advert.comments.count
- #     click_on("Delete")
- #     wait_for_ajax
- #     assert_equal @dimon_advert.comments.count, before_click - 1
- #   end
- # end
+  test "comment ajax delete button work" do
+    comment_to_delete = comments(:dimon_second_comment)
+    login_as(@dimon, scope: :user)
+    visit advert_path(@dimon_advert)
+    within "#comment-#{comment_to_delete.id}" do
+      find(".btn-danger").click
+    end
+    find("#comment-#{comment_to_delete.id}")
+    assert page.has_css?("#comment-#{comment_to_delete.id}", visible: false)
+  end
 
 end
