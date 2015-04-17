@@ -1,16 +1,12 @@
+.forms{
+    width: 50%;
+    position: absolute;
+    left: 30%;
+}
 .login_box{
       width: 35%;
       position: absolute;
-      top: 15%;
-      left: 32.5%;
-}
-.best_in_place {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.5s linear 0s;
-}
-.best_in_place:hover, #user_account .do_hover {
-    background: none no-repeat scroll right center #ccc;
+      left: 34.5%;
 }
 #map-container {
     height: 400px;
