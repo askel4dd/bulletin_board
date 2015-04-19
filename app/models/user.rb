@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def role?(role)
-    return false if self.role == nil
+    return false if self.try(:role) == nil
     self.role.name.downcase.to_sym == role
   end
 
