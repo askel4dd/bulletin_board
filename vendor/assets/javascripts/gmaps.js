@@ -1,3 +1,4 @@
+if (typeof window.google === 'object' && window.google.maps) {
 (function(root, factory) {
   if(typeof exports === 'object') {
     module.exports = factory();
@@ -17,10 +18,6 @@
  * Copyright 2015, Gustavo Leon
  * Released under the MIT License.
  */
-
-if (!(typeof window.google === 'object' && window.google.maps)) {
-  throw 'Google Maps API is required. Please register the following JavaScript library http://maps.google.com/maps/api/js?sensor=true.'
-}
 
 var extend_object = function(obj, new_obj) {
   var name;
@@ -2179,4 +2176,4 @@ if (!Array.prototype.indexOf) {
 }
   
 return GMaps;
-}));
+}));}
