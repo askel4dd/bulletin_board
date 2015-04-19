@@ -42,12 +42,12 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if current_user.role?(:admin) && @user.update_without_password(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { respond_with_bip(@user) }
+      elsif @user.update_with_password(user_params)
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { respond_with_bip(@user) }
       end
     end
   end
@@ -70,6 +70,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:login, :email, :fname, :lname, :birthday, :address, :city, :zip, :state, :country)
+      params.require(:user).permit(:login, :email, :fname, :lname, :birthday, :address, :city, :zip, :state, :country, :role_id, :current_password)
     end
 end

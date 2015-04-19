@@ -10,4 +10,6 @@ table class="table"
       tr
         td = user.login
         td = link_to 'Show', user
+        -if current_user.role? :admin
+          td = link_to 'Edit', edit_user_path(user)
 br

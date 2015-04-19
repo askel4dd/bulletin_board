@@ -2,6 +2,18 @@
   = f.error_notification
 
   .form-inputs
+    = f.input :email
+    = f.input :login
+    = f.input :fname
+    = f.input :lname
+    = f.input :birthday
+    = f.input :address
+    = f.input :city
+    = f.input :zip
+    = f.input :state
+    = f.input :country
+    = f.input :role_id if @user.role? :admin
+    = f.input :current_password
 
   .form-actions
     = f.button :submit
