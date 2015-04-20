@@ -12,7 +12,7 @@
     = f.input :zip
     = f.input :state
     = f.input :country
-    = f.input :role_id if current_user.role? :admin
+    = f.input :role_id, collection: Role.all if current_user.role? :admin
     = f.input :current_password unless current_user.role? :admin
 
   .form-actions

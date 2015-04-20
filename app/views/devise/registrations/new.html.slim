@@ -12,7 +12,7 @@ div class="col-lg-6"
       == f.input :login, label: "Enter Login", required: true
       == f.input :fname, label: "First Name", required: true
       == f.input :lname, label: "Last Name", required: true
-      == f.input :birthday, required: true
+      == f.input :birthday, required: true, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12
       == f.input :address, required: true
       == f.input :city, required: true
       == f.input :state, required: true
