@@ -6,5 +6,11 @@ class Advert < ActiveRecord::Base
   acts_as_taggable
   searchable do
     text :title, :description
+    text :user do
+      [user.login, user.country, user.state, user.city, user.address]
+    end
+    text :tags do
+      tags.map { |tag| tag.name }
+    end
   end
 end
