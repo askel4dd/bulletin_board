@@ -27,17 +27,15 @@ class User < ActiveRecord::Base
   end
 
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
-    data = access_token.info
-    user = User.where(:email => data["email"]).first
-
+    data = access_token
+    user = User.where(uid: data["uid"], provider: data["provider"]).first || User.new
     # Uncomment the section below if you want users to be created if they don't exist
-    unless user
-      user = User.new
+    #unless user
     #  user = User.create(login: data["name"],
     #        email: data["email"],
     #        password: Devise.friendly_token[0,20])
-    end
-    user
+    #end
+    #user
   end
 
   def self.new_with_session(params, session)
@@ -47,6 +45,8 @@ class User < ActiveRecord::Base
         user.fname = data["given_name"] if user.fname.blank?
         user.lname = data["family_name"] if user.lname.blank?
         user.birthday = data["birthday"] if user.birthday.blank?
+        user.uid = session["devise.google_data"]["uid"]
+        user.provider = session["devise.google_data"]["provider"]
       end
     end
   end
