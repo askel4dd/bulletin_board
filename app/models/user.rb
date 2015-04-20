@@ -32,10 +32,22 @@ class User < ActiveRecord::Base
 
     # Uncomment the section below if you want users to be created if they don't exist
     unless user
-      user = User.create(login: data["name"],
-            email: data["email"],
-            password: Devise.friendly_token[0,20])
-     end
+      user = User.new
+    #  user = User.create(login: data["name"],
+    #        email: data["email"],
+    #        password: Devise.friendly_token[0,20])
+    end
     user
+  end
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.google_data"] && session['devise.google_data']['extra']['raw_info']
+        user.email = data["email"] if user.email.blank?
+        user.fname = data["given_name"] if user.fname.blank?
+        user.lname = data["family_name"] if user.lname.blank?
+        user.birthday = data["birthday"] if user.birthday.blank?
+      end
+    end
   end
 end
