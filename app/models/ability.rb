@@ -6,18 +6,13 @@ class Ability
     if user.role? :admin
       can :manage, :all
     elsif user.role? :moderator
-      can :manage, [Advert, Comment]
-      can :manage, user
+      can :manage, [Advert, Comment, user]
     elsif user.role? :generic
       can :manage, user
+      can :manage, Advert, user_id: user.id
+      can :manage, Comment, user_id: user.id
       can :read, [User, Advert, Comment]
       can :create, [Advert, Comment]
-      can :manage, Advert do |advert|
-        advert.try(:user) == user
-      end
-      can :manage, Comment do |comment|
-        comment.try(:user) == user
-      end
     elsif user
       can :create, User
       can :read, [User, Advert, Comment]
