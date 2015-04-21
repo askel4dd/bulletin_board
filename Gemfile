@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'will_paginate'
 gem 'coveralls', require: false
 gem 'country_select'
 gem 'geocoder'

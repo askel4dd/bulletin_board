@@ -23,3 +23,5 @@
               =advert.comments.size
           li |
           li ="Tags: #{tags_to_link(advert.tag_list)}".html_safe
+div class="row text-center"
+  =will_paginate @adverts

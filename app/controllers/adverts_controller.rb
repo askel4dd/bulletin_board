@@ -7,14 +7,15 @@ class AdvertsController < ApplicationController
   # GET /adverts.json
   def index
     if params[:tag]
-      @adverts = Advert.tagged_with(params[:tag])
+      @adverts = Advert.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 3)
     elsif params[:query]
       @query = Advert.search do
         fulltext params[:query]
+        paginate page: params[:page], per_page: 3
       end
       @adverts = @query.results
     else
-      @adverts = Advert.all
+      @adverts = Advert.paginate(page: params[:page], per_page: 3)
     end
   end
 
