@@ -1,6 +1,5 @@
 class AdvertsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
-  before_action :set_advert, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
   # GET /adverts
@@ -78,10 +77,6 @@ class AdvertsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_advert
-      @advert = Advert.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def advert_params
       params.require(:advert).permit(:title, :description, :image, :tag_list)
