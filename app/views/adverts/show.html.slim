@@ -21,7 +21,7 @@ div class="row"
           a class="btn btn-success" id="add-comment" Add comment
         =render "comments/form"
       -else
-        p Register or log in to add new comments.
+        p class="text-center" Register or log in to add new comments.
       hr
       -@comments.each do |comment|
         =render comment

@@ -13,11 +13,11 @@ div class="col-lg-6"
       == f.input :fname, label: "First Name", required: true
       == f.input :lname, label: "Last Name", required: true
       == f.input :birthday, required: true, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12
-      == f.input :address, required: true
-      == f.input :city, required: true
-      == f.input :state, required: true
-      == f.input :country, required: true
-      == f.input :zip, required: true
+      == f.input :address, required: true, input_html: { data: { behaviour: "address-field" } }
+      == f.input :city, required: true, input_html: { data: { behaviour: "address-field" } }
+      == f.input :state, required: true, input_html: { data: { behaviour: "address-field" } }
+      == f.input :country, required: true, input_html: { data: { behaviour: "address-field" } }
+      == f.input :zip, required: true, input_html: { data: { behaviour: "address-field" } }
       == f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
       == f.input :password_confirmation, required: true
       == f.input :uid, as: :hidden

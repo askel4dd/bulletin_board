@@ -5,13 +5,12 @@ $(document).ready ->
     lat: $("table").attr("data-data_lat") || 0,
     lng: $("table").attr("data-data_lng") || 0
   }) if typeof google == 'object' && typeof google.maps == 'object'
+  full_address = ""
   proceedGeo = ()->
     GMaps.geocode({
-      address: $('#user_zip').val().trim() + " " +
-               $('#user_address').val().trim() + " " +
-               $('#user_city').val().trim() + " " +
-               $('#user_state').val().trim() + " " +
-               $('#user_country').val().trim(),
+      address: $("[data-behaviour~=address-field]").map (index, element)->
+        element.value if element.value
+      .get().join(", ")
       callback: (results, status)->
         if status=='OK'
           latlng = results[0].geometry.location
@@ -21,13 +20,5 @@ $(document).ready ->
             lng: latlng.lng()
           })
     })
-  $('#user_address').change ->
-    proceedGeo()
-  $('#user_city').change ->
-    proceedGeo()
-  $('#user_state').change ->
-    proceedGeo()
-  $('#user_zip').change ->
-    proceedGeo()
-  $('#user_country').change ->
+  $('[data-behaviour~=address-field]').change ->
     proceedGeo()
