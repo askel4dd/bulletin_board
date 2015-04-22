@@ -5,7 +5,6 @@ $(document).ready ->
     lat: $("table").attr("data-data_lat") || 0,
     lng: $("table").attr("data-data_lng") || 0
   }) if typeof google == 'object' && typeof google.maps == 'object'
-  full_address = ""
   proceedGeo = ()->
     GMaps.geocode({
       address: $("[data-behaviour~=address-field]").map (index, element)->
