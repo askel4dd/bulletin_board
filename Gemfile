@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'sucker_punch'
 gem 'will_paginate'
 gem 'coveralls', require: false
 gem 'country_select'

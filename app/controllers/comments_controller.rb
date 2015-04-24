@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
         render  :partial => "comments/comment",
                 :locals => { :@advert => @comment.advert, :comment  => @comment}, :layout => false,
                 :status => :created
-        UserMailer.new_comment(@comment).deliver
+        NewCommentNotificationJob.perform_later(@comment)
       end
   end
 
