@@ -4,6 +4,7 @@ class UserMailerTest < ActionMailer::TestCase
   setup do
     @comment = comments(:dimon_comment)
   end
+
   test "new_comment notification" do
     assert_emails 1 do
       @email = UserMailer.new_comment(@comment).deliver_now
