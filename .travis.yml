@@ -4,4 +4,3 @@ rvm:
 before_script:
   - cp config/database.travis.yml config/database.yml
   - psql -c 'create database bulletin_board_test;' -U postgres
-  - rake sunspot:solr:start RAILS_ENV=test

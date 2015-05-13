@@ -6,7 +6,7 @@ gem 'will_paginate'
 gem 'coveralls', require: false
 gem 'country_select'
 gem 'geocoder'
-gem 'sunspot_rails'
+gem 'pg_search'
 gem 'acts-as-taggable-on'
 gem 'redcarpet'
 gem 'best_in_place'
@@ -53,7 +53,6 @@ gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'sunspot_solr'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 

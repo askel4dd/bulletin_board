@@ -8,11 +8,7 @@ class AdvertsController < ApplicationController
     if params[:tag]
       @adverts = Advert.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 3)
     elsif params[:query]
-      @query = Advert.search do
-        fulltext params[:query]
-        paginate page: params[:page], per_page: 3
-      end
-      @adverts = @query.results
+      @adverts = Advert.custom_search(params[:query]).page(params[:page]).per_page(3)
     else
       @adverts = Advert.paginate(page: params[:page], per_page: 3)
     end
