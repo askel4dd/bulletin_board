@@ -1,7 +1,7 @@
 - @adverts.each do |advert|
   div class="well"
     div class="media"
-      a class="pull-left" href="#"
+      =link_to advert, class: "pull-left"
         =image_tag advert.image.thumb.url if advert.image?
       div class="media-body"
         div class="media-heading"
