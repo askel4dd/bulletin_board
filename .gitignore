@@ -5,7 +5,6 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 /coverage/*
 /config/environment_variables.yml
-/solr/*
 # Ignore bundler config.
 /.bundle
 
