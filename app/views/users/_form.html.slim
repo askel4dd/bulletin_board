@@ -2,18 +2,20 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :email
-    = f.input :login
-    = f.input :fname
-    = f.input :lname
-    = f.input :birthday
-    = f.input :address
-    = f.input :city
-    = f.input :zip
-    = f.input :state
-    = f.input :country
-    = f.input :role_id, collection: Role.all if current_user.role? :admin
-    = f.input :current_password unless current_user.role? :admin
+    == f.input :email
+    == f.input :login
+    == f.input :fname
+    == f.input :lname
+    == f.input :birthday
+    == f.input :address, input_html: { data: { behaviour: "address-field" } }
+    == f.input :city, input_html: { data: { behaviour: "address-field" } }
+    == f.input :zip, input_html: { data: { behaviour: "address-field" } }
+    == f.input :state, input_html: { data: { behaviour: "address-field" } }
+    == f.input :country, input_html: { data: { behaviour: "address-field" } }
+    == f.input :role_id, collection: Role.all if current_user.role? :admin
+    == f.input :current_password unless current_user.role? :admin
+    == f.input :latitude, as: :hidden
+    == f.input :longitude, as: :hidden
 
   .form-actions
     = f.button :submit

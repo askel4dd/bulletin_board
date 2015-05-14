@@ -5,7 +5,6 @@ gem 'sucker_punch'
 gem 'will_paginate'
 gem 'coveralls', require: false
 gem 'country_select'
-gem 'geocoder'
 gem 'pg_search'
 gem 'acts-as-taggable-on'
 gem 'redcarpet'

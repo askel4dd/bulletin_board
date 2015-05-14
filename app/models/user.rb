@@ -10,12 +10,6 @@ class User < ActiveRecord::Base
   has_many :adverts
   has_many :comments
   before_save :set_role
-  geocoded_by :full_address
-  after_validation :geocode#, if: ->(obj){ obj.full_address.changed? }
-
-  def full_address
-    [zip, address, city, state, country].compact.join(', ')
-  end
 
   def set_role
     self.role = Role.find_by(name: "Generic") if self.role.nil?

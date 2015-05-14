@@ -2,8 +2,8 @@ $(document).ready ->
   $('.best_in_place').best_in_place()
   map = new GMaps({
     div: '#map',
-    lat: $("table").attr("data-data_lat") || 0,
-    lng: $("table").attr("data-data_lng") || 0
+    lat: $("#map-container").attr("data-data_lat") || 0,
+    lng: $("#map-container").attr("data-data_lng") || 0
   }) if typeof google == 'object' && typeof google.maps == 'object'
   proceedGeo = ()->
     GMaps.geocode({
@@ -18,6 +18,8 @@ $(document).ready ->
             lat: latlng.lat(),
             lng: latlng.lng()
           })
+          $('#user_latitude').val(latlng.lat())
+          $('#user_longitude').val(latlng.lng())
     })
   $('[data-behaviour~=address-field]').change ->
     proceedGeo()

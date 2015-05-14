@@ -12,11 +12,6 @@ class UserTest < ActiveSupport::TestCase
     @moderator_ability = Ability.new(@moderator)
   end
 
-  test "full_address return proper string" do
-    assert_equal "#{@dimon.zip}, #{@dimon.address}, #{@dimon.city}, #{@dimon.state}, #{@dimon.country}",
-                  @dimon.full_address
-  end
-
   test "user role set to generic after creation" do
     assert_equal @dimon.role.name, "Generic"
   end
@@ -32,11 +27,6 @@ class UserTest < ActiveSupport::TestCase
 
   test "role? method return true if user role equal to func input" do
     assert @dimon.role?(:generic)
-  end
-
-  test "user latitude and longitude geocoded after validation" do
-    assert @dimon.latitude
-    assert @dimon.longitude
   end
 
   test "user can only destroy advert which they own" do

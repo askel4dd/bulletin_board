@@ -1,5 +1,5 @@
 div class="row"
-  table class="table" data-data_lat="#{@user.latitude}" data-data_lng="#{@user.longitude}"
+  table class="table"
     tbody
       tr
         td Login
@@ -34,7 +34,7 @@ div class="row"
       tr
         td Role
         td =@user.role.name
-  div id="map-container"
+  div id="map-container" data-data_lat="#{@user.latitude}" data-data_lng="#{@user.longitude}"
     div class="map-canvas" id="map"
 /= link_to 'Delete', edit_user_registration_path, method: :delete, class: "btn btn-danger"
 = content_for :head do

@@ -202,7 +202,6 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
-    geocoder (1.2.8)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     hashie (3.4.1)
@@ -409,7 +408,6 @@ DEPENDENCIES
   coveralls
   devise
   fog
-  geocoder
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick

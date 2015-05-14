@@ -22,6 +22,8 @@ div class="col-lg-6" style="float:none; margin:auto"
       == f.input :password_confirmation, required: true
       == f.input :uid, as: :hidden
       == f.input :provider, as: :hidden
+      == f.input :latitude, as: :hidden
+      == f.input :longitude, as: :hidden
 
     div class="form-actions"
       == f.button :submit, "Sign up"
