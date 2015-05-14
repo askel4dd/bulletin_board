@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :title
     = f.input :description
-    = f.input :tag_list
+    = f.input :tag_list, input_html: { value: @advert.tag_list.to_s }
     = f.file_field :image
 
   .form-actions
