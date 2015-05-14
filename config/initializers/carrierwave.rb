@@ -8,4 +8,5 @@ CarrierWave.configure do |config|
   config.fog_directory = 'bulletinboardimages'
   config.fog_public = false
   config.fog_attributes = {'Cache-Control'=>"max-age=#{365.day.to_i}"}
+  config.cache_dir = "#{Rails.root}/tmp/uploads"
 end
