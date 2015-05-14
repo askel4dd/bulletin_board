@@ -6,11 +6,7 @@ class Advert < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   acts_as_taggable
   pg_search_scope :custom_search,
-    against: [:title, :description]
-   # text :user do
-   #   [user.login, user.country, user.state, user.city, user.address]
-   # end
-   # text :tags do
-   #   tags.map { |tag| tag.name }
-   # end
+    against: [:title, :description],
+    associated_against: { user: [:login, :country, :state, :city, :address],
+                          tags: :name }
 end
