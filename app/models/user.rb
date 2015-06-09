@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:google_oauth2]
   validates :email, :encrypted_password, :login, :fname, :lname, :birthday,
             :address, :city, :zip, :state, :country, presence: true
+  validates_length_of :adverts, maximum: 10
   belongs_to :role
   has_many :adverts
   has_many :comments

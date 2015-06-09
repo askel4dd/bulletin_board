@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.2'
 gem 'rails_12factor'
 gem 'sucker_punch'
 gem 'will_paginate'
@@ -60,7 +60,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '~> 1.3.6'
   gem 'capybara'
   gem 'poltergeist'
   gem 'capybara-screenshot'
