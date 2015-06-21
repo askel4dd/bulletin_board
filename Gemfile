@@ -63,6 +63,6 @@ group :development, :test do
   gem 'spring', '~> 1.3.6'
   gem 'capybara'
   gem 'poltergeist'
-  gem 'capybara-screenshot'
+  gem 'simplecov', require: false
 end
 

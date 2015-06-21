@@ -1,5 +1,11 @@
-require 'coveralls'
-Coveralls.wear!
+if ENV['CIRLCE_ARTIFACTS']
+  require 'simplecov'
+  dir = File.join("..", "..", "..", ENV['CIRLCE_ARTIFACTS'], "coverage")
+  SimpleCov.coverage_dir(dir)
+else
+  require 'coveralls'
+  Coveralls.wear!
+end
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
