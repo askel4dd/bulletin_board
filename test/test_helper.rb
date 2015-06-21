@@ -1,7 +1,8 @@
-if ENV['CIRLCE_ARTIFACTS']
+if ENV['CIRCLE_ARTIFACTS']
   require 'simplecov'
-  dir = File.join("..", "..", "..", ENV['CIRLCE_ARTIFACTS'], "coverage")
+  dir = File.join("..", "..", "..", ENV['CIRCLE_ARTIFACTS'], "coverage")
   SimpleCov.coverage_dir(dir)
+  SimpleCov.start 'rails'
 else
   require 'coveralls'
   Coveralls.wear!
@@ -11,7 +12,6 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'capybara/rails'
 require 'capybara/poltergeist'
-require 'capybara-screenshot/minitest'
 
 class ActiveSupport::TestCase
   fixtures :all
