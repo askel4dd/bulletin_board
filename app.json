@@ -1,6 +1,8 @@
 {
   "name":"bulletin_board",
-  "scripts":{},
+  "scripts":{
+    "postdeploy": "bundle exec bin/setup"
+  },
   "env":{
     "AWS_ACCESS_KEY_ID":{
       "required":true
