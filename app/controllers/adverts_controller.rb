@@ -3,7 +3,6 @@ class AdvertsController < ApplicationController
   load_and_authorize_resource
 
   # GET /adverts
-  # GET /adverts.json
   def index
     if params[:tag]
       @adverts = Advert.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 3)
